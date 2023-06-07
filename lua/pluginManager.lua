@@ -2,19 +2,40 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
 	use 'wbthomason/packer.nvim';
 
-	use ('cocopon/iceberg.vim');
+	--themes to vary
+	use { 'marko-cerovac/material.nvim' };
 
+	--autoSave
 	use { 'Pocco81/auto-save.nvim' };
 
+	--file navigation
 	use {
 	  'nvim-telescope/telescope.nvim', branch = '0.1.x',
 	  requires = { {'nvim-lua/plenary.nvim'} }
 	};
 
-	use {'nvim-tree/nvim-web-devicons'}
+	--show buffers on top as tabs
 	use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
 
+	--completion plugins
+	use {'hrsh7th/nvim-cmp'};
+	use {'hrsh7th/cmp-buffer'};
+	use {'hrsh7th/cmp-path'};
+	use {'hrsh7th/cmp-cmdline'};
+	use {'hrsh7th/cmp-nvim-lsp'};
+	use {'saadparwaiz1/cmp_luasnip'};
+
+	--snippets
+	use {'L3MON4D3/LuaSnip'};
+	use {'rafamadriz/friendly-snippets'};
+
+	--language parser
 	use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'});
 
-end)
+	--autocomplete () {} [] '' ""
+	use { 'windwp/nvim-autopairs' }
 
+	--use terminal in vim
+	use { 'akinsho/toggleterm.nvim' }
+
+end)

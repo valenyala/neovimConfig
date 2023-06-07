@@ -4,7 +4,7 @@ require("bufferline").setup{
 		numbers = "none",
 		middle_mouse_command = "bdelete %d",
 		buffer_close_icon = 'x',
-		show_buffer_icons = false,
-		separator_style = "thin"
+		separator_style = "thick",
+		show_buffer_icons = true,
 	}
 }
