@@ -1,11 +1,13 @@
-require('pluginManager')
-require('pluginConfigs.colorscheme')
-require('pluginConfigs.bufferline')
-require('pluginConfigs.telescope')
-require('pluginConfigs.treesitter')
-require('pluginConfigs.terminal')
-require('pluginConfigs.autopair')
-require('pluginConfigs.completion')
+require('pluginManager');
+require('pluginConfigs.colorscheme');
+require('pluginConfigs.bufferline');
+require('pluginConfigs.telescope');
+require('pluginConfigs.treesitter');
+require('pluginConfigs.terminal');
+require('pluginConfigs.autopair');
+require('pluginConfigs.completion');
+require('pluginConfigs.lsp.mason');
+require('pluginConfigs.lsp.handlers').setup();
 
 
 vim.g.netrw_banner = 0;
@@ -39,6 +41,8 @@ vim.keymap.set('n', '<C-k>', "<C-w>k", {noremap = true});
 vim.keymap.set('n', '<C-y>', '<C-r>', {noremap = true});
 vim.keymap.set('n', '<leader>e', ':Ve<cr>', {noremap = true});
 
+vim.keymap.set('n', '<space>m', ":Mason<cr>", {noremap = true});
+
 vim.o.guicursor = "n-v-c-sm:block,i-ci:ver25,r-cr-o:hor20";
 vim.o.number = true;
 vim.o.relativenumber = true;
@@ -51,3 +55,4 @@ vim.o.expandtab = false;
 vim.o.shiftwidth = 4;
 vim.o.scrolloff = 10;
 vim.o.hidden = false;
+

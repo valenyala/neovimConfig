@@ -23,12 +23,19 @@ return require('packer').startup(function(use)
 	use {'hrsh7th/cmp-path'};
 	use {'hrsh7th/cmp-cmdline'};
 	use {'hrsh7th/cmp-nvim-lsp'};
+	use {'hrsh7th/cmp-omni'};
 	use {'saadparwaiz1/cmp_luasnip'};
 
 	--snippets
 	use {'L3MON4D3/LuaSnip'};
 	use {'rafamadriz/friendly-snippets'};
 
+	--LSP
+	use { "neovim/nvim-lspconfig" }
+	use { "williamboman/mason.nvim" ,
+		run = ":MasonUpdate"
+	}
+	use { "williamboman/mason-lspconfig.nvim" }
 	--language parser
 	use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'});
 
