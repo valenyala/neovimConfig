@@ -6,12 +6,13 @@ require('pluginConfigs.treesitter');
 require('pluginConfigs.terminal');
 require('pluginConfigs.autopair');
 require('pluginConfigs.completion');
+require('pluginConfigs.nvimtree');
 require('pluginConfigs.lsp.mason');
 require('pluginConfigs.lsp.handlers').setup();
 
 
-vim.g.netrw_banner = 0;
-vim.g.netrw_winsize = 20;
+vim.g.loaded_newrw = 1;
+vim.g.loaded_newrwPlugin = 1;
 
 vim.keymap.set('i', 'kj', '<esc>', { noremap = true });
 vim.keymap.set('i', 'jk', '<esc>', { noremap = true });
@@ -39,7 +40,7 @@ vim.keymap.set('n', '<C-j>', "<C-w>j", {noremap = true});
 vim.keymap.set('n', '<C-k>', "<C-w>k", {noremap = true});
 
 vim.keymap.set('n', '<C-y>', '<C-r>', {noremap = true});
-vim.keymap.set('n', '<leader>e', ':Ve<cr>', {noremap = true});
+vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<cr>', {noremap = true});
 
 vim.keymap.set('n', '<space>m', ":Mason<cr>", {noremap = true});
 

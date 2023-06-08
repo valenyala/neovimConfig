@@ -45,4 +45,7 @@ return require('packer').startup(function(use)
 	--use terminal in vim
 	use { 'akinsho/toggleterm.nvim' }
 
+	--file navigation with nvim-tree
+	use { 'nvim-tree/nvim-tree.lua' }
+
 end)
