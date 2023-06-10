@@ -14,6 +14,8 @@ require('pluginConfigs.lsp.handlers').setup();
 vim.g.loaded_newrw = 1;
 vim.g.loaded_newrwPlugin = 1;
 
+vim.keymap.set('n', "<leader>ev", ":vs ~/.config/nvim/init.lua<cr>", { noremap = true });
+vim.keymap.set('n', "<leader>sv", ":so ~/.config/nvim/init.lua<cr>", { noremap = true });
 vim.keymap.set('i', 'kj', '<esc>', { noremap = true });
 vim.keymap.set('i', 'jk', '<esc>', { noremap = true });
 vim.keymap.set('i', ';', '<esc>A;<esc>', { noremap = true });
@@ -40,7 +42,7 @@ vim.keymap.set('n', '<C-j>', "<C-w>j", {noremap = true});
 vim.keymap.set('n', '<C-k>', "<C-w>k", {noremap = true});
 
 vim.keymap.set('n', '<C-y>', '<C-r>', {noremap = true});
-vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<cr>', {noremap = true});
+vim.keymap.set('n', '<leader>o', ':NvimTreeToggle<cr>', {noremap = true});
 
 vim.keymap.set('n', '<space>m', ":Mason<cr>", {noremap = true});
 
@@ -56,4 +58,6 @@ vim.o.expandtab = false;
 vim.o.shiftwidth = 4;
 vim.o.scrolloff = 10;
 vim.o.hidden = false;
+vim.o.ignorecase = true;
+vim.o.smartcase = true;
 
