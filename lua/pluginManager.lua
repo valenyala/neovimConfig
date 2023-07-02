@@ -34,18 +34,22 @@ return require('packer').startup(function(use)
 	use { "neovim/nvim-lspconfig" }
 	use { "williamboman/mason.nvim" ,
 		run = ":MasonUpdate"
-	}
+	};
 	use { "williamboman/mason-lspconfig.nvim" }
 	--language parser
 	use ('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'});
 
 	--autocomplete () {} [] '' ""
-	use { 'windwp/nvim-autopairs' }
+	use { 'windwp/nvim-autopairs' };
 
 	--use terminal in vim
-	use { 'akinsho/toggleterm.nvim' }
+	use { 'akinsho/toggleterm.nvim' };
 
 	--file navigation with nvim-tree
-	use { 'nvim-tree/nvim-tree.lua' }
+	use { 'nvim-tree/nvim-tree.lua' };
 
+	--vim surround
+	use { 'kylechui/nvim-surround', tag = "*"};
+
+	use { 'numToStr/Comment.nvim' };
 end)

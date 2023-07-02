@@ -9,6 +9,8 @@ require('pluginConfigs.completion');
 require('pluginConfigs.nvimtree');
 require('pluginConfigs.lsp.mason');
 require('pluginConfigs.lsp.handlers').setup();
+require('pluginConfigs.surround');
+require('pluginConfigs.commentConfig');
 
 
 vim.g.loaded_newrw = 1;
@@ -40,11 +42,23 @@ vim.keymap.set('n', '<C-h>', "<C-w>h", {noremap = true});
 vim.keymap.set('n', '<C-l>', "<C-w>l", {noremap = true});
 vim.keymap.set('n', '<C-j>', "<C-w>j", {noremap = true});
 vim.keymap.set('n', '<C-k>', "<C-w>k", {noremap = true});
+vim.keymap.set('n', '0', '^', {noremap = true});
+vim.keymap.set('n', '-', '$', {noremap = true});
 
 vim.keymap.set('n', '<C-y>', '<C-r>', {noremap = true});
 vim.keymap.set('n', '<leader>o', ':NvimTreeToggle<cr>', {noremap = true});
+vim.keymap.set('n', '{', 'A<space>{}<left><enter><enter><esc>kcc')
+vim.keymap.set('i', '{<enter>', '<space>{}<left><enter><enter><esc>kcc', {noremap = true});
 
 vim.keymap.set('n', '<space>m', ":Mason<cr>", {noremap = true});
+
+vim.keymap.set('i', 'DC', 'describe("<space>tests",<space>()<space>=><space>{<enter>});<esc>kf"a', {noremap = true});
+vim.keymap.set('i', 'IT', 'it("Should<space>",<space>async()<space>=><space>{<enter>});<esc>kf<space>a', {noremap = true});
+vim.keymap.set('i', 'TR', '.to.be.revertedWith("");<esc>hhi', {noremap = true});
+vim.keymap.set('i', 'TE', '.to.be.equals();<esc>hi', {noremap = true});
+vim.keymap.set('i', 'EX', 'expect()<esc>i');
+vim.keymap.set('i', 'AE', 'await<space>expect()<esc>i');
+vim.keymap.set('i', 'awa', 'await<space>');
 
 vim.o.guicursor = "n-v-c-sm:block,i-ci:ver25,r-cr-o:hor20";
 vim.o.number = true;

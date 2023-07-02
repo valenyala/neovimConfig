@@ -2,6 +2,7 @@ local servers = {
 	"lua_ls",
 	"omnisharp",
 	"solidity",
+	"tsserver"
 }
 
 local mason = require('mason');
