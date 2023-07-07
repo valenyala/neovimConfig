@@ -52,4 +52,6 @@ return require('packer').startup(function(use)
 	use { 'kylechui/nvim-surround', tag = "*"};
 
 	use { 'numToStr/Comment.nvim' };
+
+	use { 'windwp/nvim-ts-autotag' };
 end)

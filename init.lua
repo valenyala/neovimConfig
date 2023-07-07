@@ -11,7 +11,7 @@ require('pluginConfigs.lsp.mason');
 require('pluginConfigs.lsp.handlers').setup();
 require('pluginConfigs.surround');
 require('pluginConfigs.commentConfig');
-
+require('pluginConfigs.nvim-ts-autotag');
 
 vim.g.loaded_newrw = 1;
 vim.g.loaded_newrwPlugin = 1;
