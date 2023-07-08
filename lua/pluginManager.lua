@@ -51,7 +51,12 @@ return require('packer').startup(function(use)
 	--vim surround
 	use { 'kylechui/nvim-surround', tag = "*"};
 
+	-- comments
 	use { 'numToStr/Comment.nvim' };
 
+	--html auto tag
 	use { 'windwp/nvim-ts-autotag' };
+
+	-- github copilot
+	use { 'github/copilot.vim' };
 end)
